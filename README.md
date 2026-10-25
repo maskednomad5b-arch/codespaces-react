@@ -1,70 +1,37 @@
-# GitHub Codespaces ♥️ React
+# Technical Assessment: React Core Concepts (Shopping Cart UI)
 
-Welcome to your shiny new Codespace running React! We've got everything fired up and running for you to explore React.
+## Overview
+Your task is to complete a partially built Shopping Cart component. You will be evaluated on your understanding of three core React concepts: **Props**, **State Management**, and **Custom Hooks**.
 
-You've got a blank canvas to work on from a git perspective as well. There's a single initial commit with the what you're seeing right now - where you go from here is up to you!
+An automated testing suite is already configured to monitor your implementation. 
 
-Everything you do here is contained within this one codespace. There is no repository on GitHub yet. If and when you’re ready you can click "Publish Branch" and we’ll create your repository and push up your project. If you were just exploring then and have no further need for this code then you can simply delete your codespace and it's gone forever.
+---
 
-This project was bootstrapped for you with [Vite](https://vitejs.dev/).
+## Tasks to Complete
 
-## Available Scripts
+### Task 1: Component Architecture & Props
+- Locate the `CartItem` sub-component inside `src/ShoppingCart.jsx`.
+- Complete the component structure so it accepts the following props: `item`, `onIncrement`, and `onDecrement`.
+- Render the `item.name`, `item.price`, and `item.quantity` dynamically into the JSX elements provided.
+- Bind the `onIncrement` and `onDecrement` function props to the respective `+` and `-` buttons.
 
-In the project directory, you can run:
+### Task 2: Custom Hooks
+- Complete the custom hook named `useDiscount(totalPrice)` inside `src/ShoppingCart.jsx`.
+- The hook must listen to changes in `totalPrice`.
+- If the `totalPrice` is strictly **greater than $300**, it must apply a **10% discount** and return the discounted price.
+- If the `totalPrice` is $300 or less, it must return the original `totalPrice`.
 
-### `npm start`
+### Task 3: State Management
+- In the main `ShoppingCart` component, manage the state of the cart items array.
+- Implement the `handleIncrement(id)` function to increase an item's quantity by 1.
+- Implement the `handleDecrement(id)` function to decrease an item's quantity by 1. **Constraint:** The minimum quantity allowed for an item is `1` (it cannot go to 0 or negative numbers).
+- Update `baseTotal` to dynamically calculate the combined cost of all items in the cart based on their quantities (`price * quantity`).
 
-We've already run this for you in the `Codespaces: server` terminal window below. If you need to stop the server for any reason you can just run `npm start` again to bring it back online.
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000/](http://localhost:3000/) in the built-in Simple Browser (`Cmd/Ctrl + Shift + P > Simple Browser: Show`) to view your running application.
-
-The page will reload automatically when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-## Learn More
-
-You can learn more in the [Vite documentation](https://vitejs.dev/guide/).
-
-To learn Vitest, a Vite-native testing framework, go to [Vitest documentation](https://vitest.dev/guide/)
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://sambitsahoo.com/blog/vite-code-splitting-that-works.html](https://sambitsahoo.com/blog/vite-code-splitting-that-works.html)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://github.com/btd/rollup-plugin-visualizer#rollup-plugin-visualizer](https://github.com/btd/rollup-plugin-visualizer#rollup-plugin-visualizer)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://dev.to/hamdankhan364/simplifying-progressive-web-app-pwa-development-with-vite-a-beginners-guide-38cf](https://dev.to/hamdankhan364/simplifying-progressive-web-app-pwa-development-with-vite-a-beginners-guide-38cf)
-
-### Advanced Configuration
-
-This section has moved here: [https://vitejs.dev/guide/build.html#advanced-base-options](https://vitejs.dev/guide/build.html#advanced-base-options)
-
-### Deployment
-
-This section has moved here: [https://vitejs.dev/guide/build.html](https://vitejs.dev/guide/build.html)
-
-### Troubleshooting
-
-This section has moved here: [https://vitejs.dev/guide/troubleshooting.html](https://vitejs.dev/guide/troubleshooting.html)
+## Testing Your Implementation
+To view your evaluation progress in real-time, open a terminal in the editor and run:
+```bash
+npx vitest
+```
+Initially, 3 test cases will fail. As you complete the tasks correctly, the test suite will automatically re-run and turn green.
