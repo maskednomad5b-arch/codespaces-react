@@ -1,26 +1,14 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "hostRequirements": {
-    "cpus": 4
-  },
-  "waitFor": "onCreateCommand",
-  "updateContentCommand": "npm install",
-  "postCreateCommand": "",
-  "postAttachCommand": {
-    "server": "npm start"
-  },
+  "name": "React Fast-Track Dev Environment",
+  "image": "://microsoft.com",
+  "features": {},
+  "postCreateCommand": "npm install",
   "customizations": {
-    "codespaces": {
-      "openFiles": [
-        "src/App.jsx"
+    "vscode": {
+      "extensions": [
+        "dsznajder.es7-react-js-snippets"
       ]
     }
   },
-  "portsAttributes": {
-    "3000": {
-      "label": "Application",
-      "onAutoForward": "openPreview"
-    }
-  },
-  "forwardPorts": [3000]
+  "forwardPorts": [5173, 3000]
 }
